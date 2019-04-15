@@ -18,12 +18,16 @@
   <form action="{{ url_for('predict')}}"method="post">
     <h2>Enter your message here</h2>
     <div class="form-group">
-      <textarea class="form-control" rows="5" id="comment"></textarea>
+      <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
     </div>
     <div class="container">
       <input type="submit" class="btn btn-primary" value="predict">
     </div>
   </form>
+  <div>
+    <h3>You Entered</h3>
+    <h3>{{ usertext }}</h3>
+  </div>
   <div>
     <h3>{{ result }}</h3>
   </div>
