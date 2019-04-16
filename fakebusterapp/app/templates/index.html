@@ -9,8 +9,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
       .jumbotron {
-      background-image: url("../static/img/jumbo.jpg");
+      background-image: url("../static/img/jumbo.png");
       background-size: cover;
+      color: #fff;
     }
   </style>
 </head>
@@ -19,7 +20,7 @@
 <div class="container">
   <div class="jumbotron text-center">
     <h1>Fake Buster</h1>
-    <p>Using this fake buster you can easily classify if you have got fake news.</p>
+    <p>Using this rate buster you can easily classify if you have got fake news.</p>
   </div>
   <form action="{{ url_for('predict')}}"method="post">
     <h2>Enter the article text here</h2>
