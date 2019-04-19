@@ -40,6 +40,10 @@ def predict():
 def index():
     return render_template("index.html")
 
-model = pk.load(open('fakebustermodel.pkl', 'rb'))
+
+from os.path import join, dirname, realpath
+
+MODELS_PATH = join(dirname(realpath(__file__)), 'static/models/..')
+model = pk.load(open(MODELS_PATH+'fakebustermodel.pkl', 'rb'))
 # if __name__ == "__main__":
 #     app.run(debug=True)
