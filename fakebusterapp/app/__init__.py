@@ -38,6 +38,6 @@ def predict():
 def index():
     return render_template("index.html")
 
-model = pk.load(open('fakebustermodel.pkl', 'rb'))
+model = pk.load(open('./models/fakebustermodel.pkl', 'rb'))
 # if __name__ == "__main__":
 #     app.run(debug=True)
