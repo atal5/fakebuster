@@ -1,8 +1,9 @@
 from flask import Flask, render_template,request
 from flask_bootstrap import Bootstrap
 import random
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 import re
+import pickle as pk
 
 
 app = Flask(__name__)
@@ -29,7 +30,7 @@ def predict():
 		# vect = cv.transform(data).toarray()
 		# my_prediction = clf.predict(vect)
         clean_input = clean_str(text)
-        model = joblib.load('fakebustermodel.pkl')
+        #model = joblib.load('fakebustermodel.pkl')
         result = model.predict([clean_input])[0]
     return render_template("index.html",result=result,usertext=text)
 
@@ -37,6 +38,6 @@ def predict():
 def index():
     return render_template("index.html")
 
-model = joblib.load('fakebustermodel.pkl')
+model = pk.load(open('fakebustermodel.pkl', 'rb'))
 # if __name__ == "__main__":
 #     app.run(debug=True)
