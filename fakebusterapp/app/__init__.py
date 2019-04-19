@@ -32,7 +32,7 @@ def predict():
 		# my_prediction = clf.predict(vect)
         clean_input = clean_str(text)
         #model = joblib.load('fakebustermodel.pkl')
-        model = pk.load(open('fakebustermodel.pkl', 'rb'))
+        #model = pk.load(open('fakebustermodel.pkl', 'rb'))
         result = model.predict([clean_input])[0]
     return render_template("index.html",result=result,usertext=text)
 
@@ -40,6 +40,6 @@ def predict():
 def index():
     return render_template("index.html")
 
-#model = pk.load(open('./models/fakebustermodel.pkl', 'rb'))
+model = pk.load(open('fakebustermodel.pkl', 'rb'))
 # if __name__ == "__main__":
 #     app.run(debug=True)
