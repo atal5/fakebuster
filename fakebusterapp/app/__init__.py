@@ -20,6 +20,8 @@ def clean_str(string):
 
 
 
+
+
 #Write a function to handle the button press from
 @app.route("/predict",methods=['POST'])
 def predict():
